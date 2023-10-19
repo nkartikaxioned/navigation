@@ -107,8 +107,15 @@ li {
   Header styling starts here
 =================================*/
 
+.close-btn {
+  font-size: 0;
+}
 
-
+.close-btn::before {
+  content: '\f00d';
+  font-family: "fontAwesome";
+  font-size: 30px;
+}
 /*=================================
   Header styling ends here
 =================================*/  
