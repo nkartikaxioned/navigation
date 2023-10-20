@@ -98,17 +98,80 @@ li {
 }
 
 /*for wrapper*/
+
 .wrapper {
   max-width: 1360px;
   width: 86%; 
   margin: 0 auto;
 }
+
 /*=================================
   Header styling starts here
 =================================*/
 
+header {
+  width: 100%;
+  height: 100vh;
+}
+
+header .wrapper {
+   width: 100%; 
+   height: 100%; 
+  }
+
+.first { 
+  width: 0; 
+  display: none;
+}
+
+.first-active, .second-active, .third-active { height: 100%; } 
+
+.first-active { 
+  width: 391px;
+  display: block;
+  background: #0000ff;
+  transition: 1s ease;
+ }
+
+.second-active {
+  width: 350px;
+  background: #ff0000;
+  transition: 1s;
+}
+
+.third-active { 
+  width: 309px; 
+  background-color: #fff; 
+}
+
+.close-btn { 
+  font-size: 0;
+  cursor: pointer;
+ }
+
+.close-btn::before {
+  content: '\f00d';
+  font-family: "fontAwesome";
+  font-size: 30px;
+}
+
+.nav-ul, .netflix {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-ul { padding: 40px; }
+
+.nav-ul li:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo { width: 30%; }
+.netflix { margin-left: 20px; }
 
 
+li { padding: 10px; }
 /*=================================
   Header styling ends here
 =================================*/  
@@ -117,12 +180,43 @@ li {
   main styling starts here
 =================================*/
 
+main {
+  width: 100%;
+  height: 100%;
+}
 
+.navigation-container .wrapper {
+  width: 95%;
+  margin-top: 20px;
+}
 
+.navigation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
+.hamburger { font-size: 0; }
 
+.hamburger::before {
+  content: '\f0c9';
+  font-family: "fontAwesome";
+  font-size: 30px;
+  cursor: pointer;
+}
 
+figure {
+  width: 12%;
+  height: 25%;
+  position: absolute;
+  top: 42%;
+  left: 45%;
+  text-align: center;
+}
 
+figcaption { padding: 10px; }
 
 /*=================================
   main styling ends here
