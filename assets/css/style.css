@@ -95,6 +95,7 @@ a {
 li {
   display: inline-block;
   list-style-type: none;
+  text-transform: uppercase;
 }
 
 /*for wrapper*/
@@ -120,13 +121,12 @@ header .wrapper {
   }
 
 .first { 
-  width: 0; 
   display: none;
 }
 
 .first-active, .second-active, .third-active { height: 100%; } 
 
-.first-active { 
+.first.first-active { 
   width: 391px;
   display: block;
   background: #0000ff;
@@ -191,11 +191,11 @@ main {
 }
 
 .navigation-container {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .hamburger { font-size: 0; }
@@ -208,7 +208,7 @@ main {
 }
 
 figure {
-  width: 12%;
+  width: 14%;
   height: 25%;
   position: absolute;
   top: 42%;
@@ -216,7 +216,11 @@ figure {
   text-align: center;
 }
 
-figcaption { padding: 10px; }
+figcaption { 
+  padding: 10px; 
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
 /*=================================
   main styling ends here
