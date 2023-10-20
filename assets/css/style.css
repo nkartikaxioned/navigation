@@ -108,6 +108,13 @@ li {
 
 .hidden { display: none; }
 
+:root{
+  --white:#FFF;
+  --black:#000;
+  --blue:#0000ff;
+  --red:#ff0000;
+}
+
 /*=================================
   Header styling starts here
 =================================*/
@@ -133,38 +140,46 @@ header .wrapper {
     transform: translate(20px, 20px);
   }
 
-.first { display: none;  }
+  .first, .second, .third { height: 100%; }
+
+.first { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%); 
+  transition:all 1.5s ; }
+
+.second { 
+  transform: translateX(-100%);
+  transition:all 1s ;
+ }
+
+.third { 
+  transform: translateX(-100%);
+  transition:all 0.5s ;
+ }
+
 .first-active, .second-active, .third-active { height: 100%;} 
 
 .first.first-active { 
   width: 391px;
-  display: block;
-  background: #0000ff;
-  animation-name: cards;
-  animation-duration: .2s;
- }
-
-.second { 
-  animation-name: removecards;
-  animation-duration: .8s;
- }
-.third { 
-  animation-name: removecards1;
-  animation-duration: 1.5s;
+  background: var(--blue);
+  transform: translateX(0);
+  transition: .3s;
  }
 
 .second-active {
   width: 350px;
-  background: #ff0000;
-  animation-name: cards1;
-  animation-duration: .8s;
+  background: var(--red);
+  transform: translateX(0);
+  transition: .6s;
 }
 
 .third-active { 
   width: 309px;
-  background-color: #fff; 
-  animation-name: cards2;
-  animation-duration: 1.5s;
+  background-color: var(--white); 
+  transform: translateX(0);
+  transition: .8s;
 }
 
 .close-btn { 
@@ -193,6 +208,7 @@ header .wrapper {
 .logo { width: 30%; }
 .netflix { margin-left: 20px; }
 li { padding: 10px; }
+li a { color: var(--black); }
 
 /*=================================
   Header styling ends here
@@ -254,31 +270,6 @@ figcaption {
   footer styling ends here
 =================================*/ 
 
-@keyframes cards {
-from {width: 0;}
-to { width: 391px;} 
-}
-
-@keyframes cards1 {
-  from {width: 0;}
-  to { width: 350px;} 
-  }
-
-  @keyframes cards2 {
-    from { width: 0; }
-    to { width: 309px;} 
-    }
-
-@keyframes removecards {
-  from {width: 350px;}
-  to { width: 0;} 
-  }
-
-@keyframes removecards1 {
-  from {width: 309px;}
-  to { width: 0;} 
-  }
-  
 /*media query starts*/
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
