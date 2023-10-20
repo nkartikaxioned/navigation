@@ -95,6 +95,7 @@ a {
 li {
   display: inline-block;
   list-style-type: none;
+  text-transform: uppercase;
 }
 
 /*for wrapper*/
@@ -104,6 +105,8 @@ li {
   width: 86%; 
   margin: 0 auto;
 }
+
+.hidden { display: none; }
 
 /*=================================
   Header styling starts here
@@ -119,29 +122,49 @@ header .wrapper {
    height: 100%; 
   }
 
-.first { 
-  width: 0; 
-  display: none;
-}
+.hamburger { font-size: 0; }
 
-.first-active, .second-active, .third-active { height: 100%; } 
+.hamburger::before {
+    content: '\f0c9';
+    display: block;
+    font-family: "fontAwesome";
+    font-size: 30px;
+    cursor: pointer;
+    transform: translate(20px, 20px);
+  }
 
-.first-active { 
+.first { display: none;  }
+.first-active, .second-active, .third-active { height: 100%;} 
+
+.first.first-active { 
   width: 391px;
   display: block;
   background: #0000ff;
-  transition: 1s ease;
+  animation-name: cards;
+  animation-duration: .2s;
+ }
+
+.second { 
+  animation-name: removecards;
+  animation-duration: .8s;
+ }
+.third { 
+  animation-name: removecards1;
+  animation-duration: 1.5s;
  }
 
 .second-active {
   width: 350px;
   background: #ff0000;
-  transition: 1s;
+  animation-name: cards1;
+  animation-duration: .8s;
 }
 
 .third-active { 
-  width: 309px; 
+  width: 309px;
   background-color: #fff; 
+  animation-name: cards2;
+  animation-duration: 1.5s;
 }
 
 .close-btn { 
@@ -169,9 +192,8 @@ header .wrapper {
 
 .logo { width: 30%; }
 .netflix { margin-left: 20px; }
-
-
 li { padding: 10px; }
+
 /*=================================
   Header styling ends here
 =================================*/  
@@ -191,24 +213,16 @@ main {
 }
 
 .navigation-container {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hamburger { font-size: 0; }
-
-.hamburger::before {
-  content: '\f0c9';
-  font-family: "fontAwesome";
-  font-size: 30px;
-  cursor: pointer;
+  z-index: -1;
 }
 
 figure {
-  width: 12%;
+  width: 16%;
   height: 25%;
   position: absolute;
   top: 42%;
@@ -216,7 +230,11 @@ figure {
   text-align: center;
 }
 
-figcaption { padding: 10px; }
+figcaption { 
+  padding: 10px; 
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
 /*=================================
   main styling ends here
@@ -236,6 +254,31 @@ figcaption { padding: 10px; }
   footer styling ends here
 =================================*/ 
 
+@keyframes cards {
+from {width: 0;}
+to { width: 391px;} 
+}
+
+@keyframes cards1 {
+  from {width: 0;}
+  to { width: 350px;} 
+  }
+
+  @keyframes cards2 {
+    from { width: 0; }
+    to { width: 309px;} 
+    }
+
+@keyframes removecards {
+  from {width: 350px;}
+  to { width: 0;} 
+  }
+
+@keyframes removecards1 {
+  from {width: 309px;}
+  to { width: 0;} 
+  }
+  
 /*media query starts*/
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
