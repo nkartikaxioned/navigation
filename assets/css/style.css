@@ -147,16 +147,20 @@ header .wrapper {
   top: 0;
   left: 0;
   transform: translateX(-100%); 
-  transition:all 1.5s ; }
+  transition:all 1.5s ease-in-out; 
+  opacity: 1;
+}
 
 .second { 
   transform: translateX(-100%);
-  transition:all 1s ;
+  transition:all 1s ease-in-out;
+  opacity: 1;
  }
 
 .third { 
   transform: translateX(-100%);
-  transition:all 0.5s ;
+  transition:all 0.5s ease-in-out;
+  opacity: 1;
  }
 
 .first-active, .second-active, .third-active { height: 100%;} 
@@ -165,21 +169,24 @@ header .wrapper {
   width: 391px;
   background: var(--blue);
   transform: translateX(0);
-  transition: .3s;
+  transition:all .3s ease-in-out;
+  opacity: 1;
  }
 
 .second-active {
   width: 350px;
   background: var(--red);
   transform: translateX(0);
-  transition: .6s;
+  transition:all .6s ease-in-out;
+  opacity: 1;
 }
 
 .third-active { 
   width: 309px;
   background-color: var(--white); 
   transform: translateX(0);
-  transition: .8s;
+  transition:all .8s ease-in-out;
+  opacity: 1;
 }
 
 .close-btn { 
